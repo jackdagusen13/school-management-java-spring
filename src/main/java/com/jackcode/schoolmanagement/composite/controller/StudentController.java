@@ -1,4 +1,4 @@
-package com.jackcode.schoolmanagement.controller;
+package com.jackcode.schoolmanagement.composite.controller;
 
 import com.jackcode.schoolmanagement.entity.Student;
 import com.jackcode.schoolmanagement.service.StudentService;
