@@ -1,8 +1,9 @@
-package com.jackcode.schoolmanagement.controller;
+package com.jackcode.schoolmanagement.composite.controller;
 
 
 import com.jackcode.schoolmanagement.entity.Classroom;
 import com.jackcode.schoolmanagement.service.ClassroomService;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -32,13 +33,9 @@ public class ClassroomApiController {
     }
 
     @GetMapping("/api/v1/classroom")
-    ResponseEntity<Object> getClassroomById(@RequestParam(value = "id") Long id) {
-        Classroom classroom;
-        try {
-            classroom = classroomService.getClassroomById(id);
-        } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity<Object>(classroomService.getClassroomById(id), HttpStatus.OK);
+    Classroom getClassroomById(@RequestParam(value = "id") Long id) {
+
+        return classroomService.getClassroomById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Classroom not found with id " + id));
     }
 }
