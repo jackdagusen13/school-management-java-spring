@@ -6,6 +6,7 @@ import com.jackcode.schoolmanagement.service.ClassroomService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClassroomServiceImpl implements ClassroomService {
@@ -27,8 +28,8 @@ public class ClassroomServiceImpl implements ClassroomService {
     }
 
     @Override
-    public Classroom getClassroomById(Long id) {
-        return classroomRepository.findById(id).get();
+    public Optional<Classroom> getClassroomById(Long id) {
+        return classroomRepository.findById(id);
     }
 
     @Override
