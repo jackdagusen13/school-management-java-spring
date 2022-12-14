@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import java.util.Set;
 
 @Entity
+@Table(name = "teachers")
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

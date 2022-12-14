@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "Grade")
+@Table(name = "grades")
 public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
