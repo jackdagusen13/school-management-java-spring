@@ -6,6 +6,7 @@ import com.jackcode.schoolmanagement.service.ClassRatingService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClassRatingServiceImpl implements ClassRatingService {
@@ -27,8 +28,8 @@ public class ClassRatingServiceImpl implements ClassRatingService {
     }
 
     @Override
-    public ClassRating getClassRatingById(Long id) {
-        return classRatingRepository.findById(id).get();
+    public Optional<ClassRating> getClassRatingById(Long id) {
+        return classRatingRepository.findById(id);
     }
 
     @Override
