@@ -3,6 +3,7 @@ package com.jackcode.schoolmanagement.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "courses")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

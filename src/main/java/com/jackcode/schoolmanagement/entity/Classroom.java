@@ -15,6 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "classrooms")
 public class Classroom {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

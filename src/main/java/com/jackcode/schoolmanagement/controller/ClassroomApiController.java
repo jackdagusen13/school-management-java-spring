@@ -1,4 +1,4 @@
-package com.jackcode.schoolmanagement.composite.controller;
+package com.jackcode.schoolmanagement.controller;
 
 
 import com.jackcode.schoolmanagement.entity.Classroom;
@@ -28,7 +28,6 @@ public class ClassroomApiController {
 
     @PostMapping("/api/v1/classroom")
     Classroom createClassroom(@Validated @RequestBody Classroom classroom) {
-        System.out.println("TEST " + classroom.getClass());
         return classroomService.saveClassroom(classroom);
     }
 

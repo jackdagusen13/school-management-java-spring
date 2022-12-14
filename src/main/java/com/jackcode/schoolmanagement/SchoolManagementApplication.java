@@ -1,14 +1,20 @@
 package com.jackcode.schoolmanagement;
 
+import com.jackcode.schoolmanagement.entity.Student;
+import com.jackcode.schoolmanagement.entity.Teacher;
 import com.jackcode.schoolmanagement.repository.StudentRepository;
 import com.jackcode.schoolmanagement.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootApplication
 public class SchoolManagementApplication implements CommandLineRunner {
+
 	public static void main(String[] args) {
 		SpringApplication.run(SchoolManagementApplication.class, args);
 	}
@@ -20,6 +26,7 @@ public class SchoolManagementApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
 //		Student student1 = new Student("Jack", "Dagusen", "jackdagusen@gmail.com");
 //		studentRepository.save(student1);
 //		Student student2 = new Student("Tony", "Stark", "tonystark@gmail.com");
@@ -32,9 +39,6 @@ public class SchoolManagementApplication implements CommandLineRunner {
 //		teacherRepository.save(teacher2);
 //		Teacher teacher3 = new Teacher("Sir", "Teacher", "sir@gmail.com", "June 1, 1999", "09278888818");
 //		teacherRepository.save(teacher3);
-
-
-
 
 	}
 }
